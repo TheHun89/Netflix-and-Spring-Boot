@@ -1,3 +1,5 @@
+* NOTE: Feign can have issues importing.  If this occurs do a maven clean package and then reimport all maven projects **/
+
 #### Test
 * GET http://localhost:8000/currency-exchange/from/USD/to/INR
 ```
