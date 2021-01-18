@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@Component
 //@FeignClient(name="currency-exchange-service", url="localhost:8000")
 @FeignClient(name="currency-exchange-service")
 @RibbonClient(name="currency-exchange-service")
