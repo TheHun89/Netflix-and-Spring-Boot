@@ -1,6 +1,5 @@
 package com.oss.netflix.currencyconversion;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-//@RequiredArgsConstructor
 @RestController
 public class CurrencyConversionController {
 
@@ -23,8 +21,6 @@ public class CurrencyConversionController {
     @GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversionBean convertCurrency(@PathVariable String from, @PathVariable String to,
                                                   @PathVariable Double quantity) {
-
-        log.info("currencyExchangeUrl is " + currencyExchangeUrl);
 
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("from", from);
