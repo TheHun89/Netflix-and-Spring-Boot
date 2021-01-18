@@ -1,10 +1,3 @@
-### Execution
-* You can view the configuration from the git repo at http://localhost:8888/limits-service/{default/dev} 
-
-### Design
-* Architect Diagram
-
-
 #### Test
 * GET http://localhost:8000/currency-exchange/from/USD/to/INR
 ```
