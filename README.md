@@ -1,3 +1,7 @@
+#### Configuration
+* Optional:  You can run multiple instances of the currency exchange service by using multiple ports.  This would result in different ports being returned in the response body.  To run a new instance on a different port in IntelliJ - select Run->Edit Configurations and duplilcate the instance.  Then in VM options enter: -Dserver.port=8001
+
+
 #### Test
 * GET http://localhost:8000/currency-exchange/from/USD/to/INR
 ```
