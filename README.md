@@ -23,7 +23,7 @@
 
 
 #### Test
-* http://localhost:8000/currency-exchange/from/USD/to/INR
+* GET http://localhost:8000/currency-exchange/from/USD/to/INR
 ```
 {
     "id": 10001,
@@ -34,7 +34,7 @@
 }
 ```
 
-* http://localhost:8100/currency-converter/from/USD/to/INR/quantity/1000
+* GET http://localhost:8100/currency-converter/from/USD/to/INR/quantity/1000
 
 ```
 {
