@@ -8,6 +8,7 @@
 * http://localhost:8761/
 
 * GET http://localhost:8000/currency-exchange/from/USD/to/INR
+* GET http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR
 ```
 {
     "id": 10001,
@@ -19,6 +20,7 @@
 ```
 
 * GET http://localhost:8100/currency-converter/from/USD/to/INR/quantity/1000
+* GET http://localhost:8765/currency-conversion-service/currency-converter/from/EUR/to/INR/quantity/1000
 
 ```
 {
