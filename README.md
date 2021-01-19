@@ -12,7 +12,7 @@ git commit -m "."
 * You can view the configuration from the git repo at 
 ```
 http://localhost:8888/limits-service/{default/dev} 
-http://localhost:8888/limits-service/{default/qa}
+http://localhost:8080/limits
 ```
 
 ### Design
