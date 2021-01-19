@@ -9,7 +9,11 @@ git commit -m "."
 * You can set the profile as **default** or **dev** in the limits-service
 
 ### Execution
-* You can view the configuration from the git repo at http://localhost:8888/limits-service/{default/dev} 
+* You can view the configuration from the git repo at 
+```
+http://localhost:8888/limits-service/{default/dev} 
+http://localhost:8888/limits-service/{default/qa}
+```
 
 ### Design
 * Architect Diagram
