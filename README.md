@@ -1,5 +1,11 @@
 ### Setup
-* After cloning the repo then you will need to do a git init in the git-localconfig-repo. 
+* After cloning the repo then you will need to cd into the git-localconfig-repo and then do:
+```
+git init
+git add . 
+git commit -m "."
+```
+* Otherwise it will not recognize the file from the git repo. 
 * You can set the profile as **default** or **dev** in the limits-service
 
 ### Execution
