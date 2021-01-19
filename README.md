@@ -3,6 +3,21 @@
 ### Configuration
 * You can run multiple instances of the **currency exchange** service by using multiple ports. This would result in different ports being returned in the response body. To run a new instance on a different port in IntelliJ - select Run->Edit Configurations and duplilcate the instance. Then in VM options enter: -Dserver.port=8001 reimport all maven projects 
 
+To launch an instance of a Zipkin server you can either download and run the jar 
+```
+curl -sSL https://zipkin.io/quickstart.sh | bash -s
+java -jar zipkin.jar
+```
+or run a docker image (recommended)
+```
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
+
+* Visit Zipkin UI at:
+```
+http://localhost:9411/zipkin/
+```
+
 
 #### Test
 * http://localhost:8761/
