@@ -10,7 +10,7 @@
 7.  tracing-with-sleuth-zipkin
 8.  hystrix-fault-tolerance
 
-* **DEPRECATION WARNING**:  Zuul, Ribbon and Hystrix are deprecated and Spring Cloud provides alternatives such as Gateway, Load Balancer and Resilience4J.
+**DEPRECATION WARNING**:  Zuul, Ribbon and Hystrix are deprecated and Spring Cloud provides alternatives such as Gateway, Load Balancer and Resilience4J.
 
 ![Netflix](https://lh3.googleusercontent.com/proxy/2xaXxOXhvZdjlrKCYzY9vCE1LX58JiRAnNiJyMb0WWZX1aSwFzgi3wRD8A7rcGOQwPofkz5o3aLiFYz2Rvk-583Je73woc-YTzzD7VXSl8Pl-o7Z)
 
