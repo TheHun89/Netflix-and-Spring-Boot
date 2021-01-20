@@ -1,15 +1,15 @@
 ### Setup
-* After cloning the repo then you will need to cd into the git-localconfig-repo and then do:
+After cloning the repo then you will need to cd into the git-localconfig-repo and then do:
 ```
 git init
 git add . 
 git commit -m "."
 ```
-* Otherwise it will not recognize the file from the git repo. 
+Otherwise it will not recognize the file from the git repo. 
 
-* Also - run a duplicate instance of the limits service on a different port in IntelliJ by selecting Run->Edit Configurations and duplilcate the instance.  Then in VM options enter: -Dserver.port=8081
+Also - run a duplicate instance of the limits service on a different port in IntelliJ by selecting Run->Edit Configurations and duplilcate the instance.  Then in VM options enter: -Dserver.port=8081
 
-* When updating the config properties from the git repository you will need to do a git add and commit again AND then execute these endpoints:
+When updating the config properties from the git repository you will need to do a git add and commit again AND then execute these endpoints:
 ```
 POST http://localhost:8080/actuator/refresh
 POST http://localhost:8081/actuator/refresh
@@ -35,10 +35,10 @@ http://localhost:8080/actuator/bus-refresh
 ```
 
 
-* You can set the profile as **default** or **dev** in the limits-service
+You can set the profile as **default** or **dev** in the limits-service
 
 ### Execution
-* You can view the configuration from the git repo at 
+You can view the configuration from the git repo at 
 ```
 http://localhost:8888/limits-service/{default/dev} 
 http://localhost:8080/limits
