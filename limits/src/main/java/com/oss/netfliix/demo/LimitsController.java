@@ -1,5 +1,6 @@
 package com.oss.netfliix.demo;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,11 +23,11 @@ public class LimitsController {
 //        return limitConfiguration;
 //    }
 
-//    @GetMapping("/fault-tolerance-example")
-//    @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
-//    public Limit retrieveConfiguration() {
-//        throw new RuntimeException("Not available");
-//    }
+    @GetMapping("/fault-tolerance-example")
+    @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
+    public Limit retrieveConfiguration() {
+        throw new RuntimeException("Not available");
+    }
 
     public Limit fallbackRetrieveConfiguration() {
         return new Limit(999, 9);
