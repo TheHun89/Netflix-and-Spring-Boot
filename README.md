@@ -1,6 +1,6 @@
 ### Spring Cloud Gateway
 
-* **DEPRECATION WARNING**: Spring Cloud Gateway should be used instead of Zuul since Netflix no longer supports it.  It is built on top of Spring WebFlux – uses reactive programming.  You can build custom routes using RouteLocator; is good for security, logging.  This branch has been refactored to use Spring Cloud Gateway. 
+* **DEPRECATION WARNING**: Spring Cloud Gateway should be used instead of Zuul since Netflix no longer supports it.  It is built on top of Spring WebFlux – uses reactive programming and is non blocking.  You can build custom routes using RouteLocator; is good for security, logging.  This branch has been refactored to use Spring Cloud Gateway. 
 Spring Boot version changed to 4.1 for all services and Spring Cloud version to 2020.0.0. Changes were made to the pom and app.properties files along with other code changes in the classes.
 
 ### Configuration
