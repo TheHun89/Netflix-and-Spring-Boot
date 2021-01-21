@@ -5,6 +5,11 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
+/** To use this you would need to comment the two lines in the app.properties:
+ * spring.cloud.gateway.discovery.locator.enabled=true
+ * spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+ * **/
 //@Configuration
 //public class ApiGatewayConfiguration {
 //
