@@ -1,4 +1,4 @@
-# Netflix and Spring Boot
+# Microservices and Spring Cloud
 
 ## Learning Path - follow branches in below order
 1.  resttemplate
