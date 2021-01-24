@@ -1,4 +1,4 @@
-# Microservices and Spring Cloud
+# Spring Cloud
 
 ## Learning Path - follow branches in below order
 1.  resttemplate
