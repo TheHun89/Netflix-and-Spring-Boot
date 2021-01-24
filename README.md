@@ -4,12 +4,11 @@
 1.  resttemplate
 2.  pull-values-from-spring-cloud-config-server
 3.  feign
-4.  ribbon-client-side-load-balancing
-5.  eureka-naming-server
-6.  zuul-api-gateway-server
-7.  tracing-with-sleuth-zipkin
-8.  hystrix-fault-tolerance
-9.  containerize-microservices-with-docker
+4.  eureka-naming-server
+5.  zuul-api-gateway-server
+6.  tracing-with-sleuth-zipkin
+7.  hystrix-fault-tolerance
+8.  containerize-microservices-with-docker
 
 **DEPRECATION WARNING**:  Zuul, Ribbon and Hystrix are deprecated and Spring Cloud provides alternatives such as Gateway, Load Balancer and Resilience4J.
 
