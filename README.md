@@ -12,7 +12,7 @@
 
 **DEPRECATION WARNING**:  Zuul, Ribbon and Hystrix are deprecated and Spring Cloud provides alternatives such as Gateway, Load Balancer and Resilience4J.
 
-![Netflix](https://i1.wp.com/samirbehara.com/wp-content/uploads/2019/05/netflix-oss-framework.png?fit=1215%2C701&ssl=1)
+![Spring Cloud](https://spring.io/images/diagram-microservices-dark-4a2e5817aac093437f4f3b3a5be8be88.svg)
 
 * [Smartbear - Why you can't talk about microservices without mentioning Netflix](https://smartbear.com/blog/develop/why-you-cant-talk-about-microservices-without-ment/)
 
