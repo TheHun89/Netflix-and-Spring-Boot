@@ -9,6 +9,7 @@
 6.  tracing-with-sleuth-zipkin
 7.  hystrix-fault-tolerance
 8.  containerize-microservices-with-docker
+9.  containerize-microservices-with-docker-integrate-mysql-volume
 
 **DEPRECATION WARNING**:  Zuul, Ribbon and Hystrix are deprecated and Spring Cloud provides alternatives such as Gateway, Load Balancer and Resilience4J.
 
