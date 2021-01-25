@@ -14,12 +14,19 @@ services:
     depends_on:
       - naming-server
       - rabbitmq
+      - mysql
     environment:
       EUREKA.CLIENT.SERVICE-URL.DEFAULTZONE: http://naming-server:8761/eureka
       SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
       RABBIT_URI: amqp://guest:guest@rabbitmq:5672
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_ZIPKIN_SENDER_TYPE: rabbit
+      RDS_HOSTNAME: mysql
+      RDS_PORT: 3306
+      RDS_DB_NAME: todos
+      RDS_USERNAME: todos-user
+      RDS_PASSWORD: dummytodos
+      SPRING.DATASOURCE.INITIALIZATION-MODE: NEVER # ALWAYS
 
   currency-conversion:
     image: repo/currency-conversion:0.0.1-SNAPSHOT
@@ -86,6 +93,25 @@ services:
     networks:
       - currency-network
 
+  mysql:
+    image: mysql:latest #5.7
+    ports:
+      - "3306:3306"
+#    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: dummypassword
+      MYSQL_USER: todos-user
+      MYSQL_PASSWORD: dummytodos
+      MYSQL_DATABASE: todos
+    volumes:
+      - mysql-database-data-volume:/var/lib/mysql
+    networks:
+      - currency-network
+  
+# Volumes
+volumes:
+  mysql-database-data-volume:
 
 networks:
   currency-network:
