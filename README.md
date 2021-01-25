@@ -1,4 +1,4 @@
-### Containerize Microservices with Docker Compose
+### Containerize Microservices with Docker Compose and MySQl Volumes
 
 #### Setup
 When you run the mvn package to build the image for currency-exchange be sure to have a container running the mysql image – otherwise it will error
