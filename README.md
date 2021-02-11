@@ -1,5 +1,9 @@
 * NOTE: Eureka, Ribbon and Feign can have issues importing.  If this occurs do a maven clean package and thenNOTE: Feign and Ribbon can have issues importing. Be sure to have the exact Spring Boot and Spring Cloud version referenced in this pom.xml. If this occurs do a maven clean package and then reimport all maven projects.
 
+### References
+* [in28minutes repo](https://github.com/in28minutes/spring-microservices-v2)
+* [Baeldung- resilience4j](https://www.baeldung.com/resilience4j)
+
 ### Configuration
 * You can run multiple instances of the **currency exchange** service by using multiple ports. This would result in different ports being returned in the response body. To run a new instance on a different port in IntelliJ - select Run->Edit Configurations and duplilcate the instance. Then in VM options enter: -Dserver.port=8001 reimport all maven projects 
 
@@ -46,39 +50,48 @@ public class CircuitBreakerController {
 
 * If we uncomment the ResponseEntity portion it will fail.
 * We can use the Retry annotation above the sampleApi method to have the method retried if it fails.  The default is 3x.
-```@Retry(name="default") 
+```
+@Retry(name="default") 
 ```
 
 * If we want to customize the number of retries to 5 then we can change the Retry annotation to:
-```@Retry(name="sample-api") 
+```
+@Retry(name="sample-api") 
 ```
 * then we would want to add the below line to the app.properties:
-```resilience4j.retry.instances.sample-api.maxRetryAttempts=5
+```
+resilience4j.retry.instances.sample-api.maxRetryAttempts=5
 ```
 
 * You can also use a fallback response if all retries fail.  You do this by adding the below method:
-```public String hardcodedResponse(Exception ex) {
+```
+public String hardcodedResponse(Exception ex) {
     return "fallback-response";
 }
 ```
 * Also change the Retry annotation to:
-```@Retry(name="sample-api", fallbackMethod="hardcodedResponse") 
+```
+@Retry(name="sample-api", fallbackMethod="hardcodedResponse") 
 ```
 
 * You can configure the interval between wait times by adding below line to app.properties:
-```resilience4j.retry.instances.sample-api.waitDuration=1s
+```
+resilience4j.retry.instances.sample-api.waitDuration=1s
 ```
 
 * You can configure exponential backoff by adding the below line to app.properties.  This is bc each subsequent request will wait exponentially longer.
-```resilience4j.retry.instances.sample-api.enableExponentialBackoff=true
+```
+resilience4j.retry.instances.sample-api.enableExponentialBackoff=true
 ```
 
 * To use CircuitBreaker we will want to change the Retry annotation to:
-```@CircuitBreaker(name = "default", fallbackMethod = "hardcodedResponse")
+```
+@CircuitBreaker(name = "default", fallbackMethod = "hardcodedResponse")
 ```
 
 * Now to see the magic you will need to fire off a lot of requests.  On Windows you can do 
-``` watch -n 0.1 curl http://localhost:8000/sample-api
+``` 
+watch -n 0.1 curl http://localhost:8000/sample-api
 ```
 * -n 0.1 means its sending a request every 1/10 of a second.  You will see that the requests start firing off and after a while they will slow and stop in intervals.
 
@@ -86,24 +99,29 @@ public class CircuitBreakerController {
 * You can configure wait duration before circuit breaker attempts to call method of dependent method again.  When a certain percentage is successful then it returns to Closed state.  
 
 * You can configure the failure rate threshhold % with the below line in the app.properties:
-```resilience4j.circuitbreaker.instances.default.failureRateThreshold=90
+```
+resilience4j.circuitbreaker.instances.default.failureRateThreshold=90
 ```
 
 * You can also configure rate limiting with the RateLimiter annotation (comment out the CircuitBreaker annotation)
-```@RateLimiter(name="default")
+```
+@RateLimiter(name="default")
 ```
 
 * Then you can configure the requests per time (ie: 2 requests every 10 sec):
-```resilience4j.ratelimiter.instances.default.limitForPeriod=2
+```
+resilience4j.ratelimiter.instances.default.limitForPeriod=2
 resilience4j.ratelimiter.instances.default.limitRefreshPeriod=10s
 ```
 * then run 
-```watch -n 1 curl http://localhost:8000/sample-api
+```
+watch -n 1 curl http://localhost:8000/sample-api
 ```
 
 * You can also use the Bulkhead annotation to set the max concurrent calls
 
-```resilience4j.bulkhead.instances.default.maxConcurrentCalls=10
+```
+resilience4j.bulkhead.instances.default.maxConcurrentCalls=10
 resilience4j.bulkhead.instances.sample-api.maxConcurrentCalls=10
 ```
 
