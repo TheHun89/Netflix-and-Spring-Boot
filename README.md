@@ -7,7 +7,7 @@
 4.  eureka-naming-server
 5.  zuul-api-gateway-server
 6.  tracing-with-sleuth-zipkin
-7.  hystrix-fault-tolerance
+7.  resilience4j
 8.  containerize-microservices-with-docker
 9.  containerize-microservices-with-docker-integrate-mysql-volume
 
